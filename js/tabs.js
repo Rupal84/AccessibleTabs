@@ -207,4 +207,5 @@
   const activeTabNsw = tabListNSW.querySelector(`#${activeTabIdNSW}`);
   activateTab(activeTabVic, false)
   activateTab(activeTabNsw, false)
+  document.querySelector("[role='listbox']").focus();
 }());
