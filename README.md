@@ -5,6 +5,6 @@ This is static application that has been created to showcase html tabs which con
 * css/tabs.css - Contains styling changes for web page.
 
 ## Setup
-Download this repo as zip.
-Extract this zip file on desired location on your machine.
-Run index.html in web browser
+- Download this repo as zip. 
+- Extract this zip file on desired location on your machine.
+- Run index.html in web browser
