@@ -1,16 +1,20 @@
+html {
+  font-family: "lucida grande", sans-serif;
+}
 .tabs {
-    width: 20em;
-    font-family: "lucida grande", sans-serif;
+    height: 10em;
+    width: 35em;
   }
   
   [role="tablist"] {
     margin: 0 0 -0.1em;
     overflow: visible;
+    display: flex;
   }
   
   [role="tab"] {
     position: relative;
-    margin: 0;
+    margin: 0 2;
     padding: 0.3em 0.5em 0.4em;
     border: 1px solid hsl(219, 1%, 72%);
     border-radius: 0.2em 0.2em 0 0;
@@ -19,6 +23,10 @@
     font-family: inherit;
     font-size: inherit;
     background: hsl(220, 20%, 94%);
+    flex: 1 1 0;
+  }
+  [role="tab"]:first-of-type, [role="tab"]:last-of-type {
+    margin: 0 2 0 0;
   }
   
   [role="tab"]:hover::before,
@@ -103,5 +111,17 @@
   }
 
   [role="listbox"] {
-    margin-bottom: 1em;
+    margin: 2.5em 0;
+    width: 20em;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
   }

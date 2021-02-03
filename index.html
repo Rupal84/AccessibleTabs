@@ -9,7 +9,9 @@
 </head>
 
 <body>
-  <select name="cities" id="cities" role="listbox">
+  <label for="cities">Please choose your suburb</label>
+  <select name="cities" id="cities" role="listbox" autofocus>
+    <option value="" selected>Select...</option>
     <optgroup label="Victoria">
       <option value="altona">Altona</option>
       <option value="seabrook">Seabrook</option>
@@ -26,145 +28,172 @@
     </optgroup>
     </select>
     <div class="tabs">
-        <div role="tablist" aria-label="Victoria">
+        <div id="Vic" role="tablist" aria-label="Victoria">
           <button role="tab"
                   aria-selected="true"
-                  aria-controls="nils-tab"
-                  id="nils">
+                  aria-controls="altona-tab"
+                  id="altona">
             Altona
           </button>
           <button role="tab"
                   aria-selected="false"
-                  aria-controls="agnes-tab"
-                  id="agnes"
+                  aria-controls="seabrook-tab"
+                  id="seabrook"
                   tabindex="-1">
             Seabrook
           </button>
           <button role="tab"
                   aria-selected="false"
-                  aria-controls="complexcomplex"
-                  id="complex"
-                  tabindex="-1"
-                  data-deletable="">
+                  aria-controls="pointcook-tab"
+                  id="pointcook"
+                  tabindex="-1">
             Pointcook
           </button>
           <button role="tab"
                   aria-selected="false"
-                  aria-controls="complexcomplex"
-                  id="complex"
-                  tabindex="-1"
-                  data-deletable="">
+                  aria-controls="docklands-tab"
+                  id="docklands"
+                  tabindex="-1">
             Docklands
           </button>
           <button role="tab"
                   aria-selected="false"
-                  aria-controls="complexcomplex"
-                  id="complex"
+                  aria-controls="springvale-tab"
+                  id="springvale"
                   tabindex="-1"
                   data-deletable="">
-            Spring Vale
+            Spring Vale <span class="sr-only"> press delete button to delete this tab</span>
           </button>
         </div>
         <div tabindex="0"
              role="tabpanel"
-             id="nils-tab"
-             aria-labelledby="nils">
+             id="altona-tab"
+             aria-labelledby="altona">
           <p>
-            Nils Frahm is a German musician, composer and record producer based in Berlin. He is known for combining classical and electronic music and for an unconventional approach to the piano in which he mixes a grand piano, upright piano, Roland Juno-60, Rhodes piano, drum machine, and Moog Taurus.
+            Altona is a suburb of Melbourne, Victoria, Australia, situated 13 km south-west of Melbourne's Central Business District, and located within the City of Hobsons Bay local government area.
           </p>
         </div>
         <div tabindex="0"
              role="tabpanel"
-             id="agnes-tab"
-             aria-labelledby="agnes"
-             hidden="">
+             id="seabrook-tab"
+             aria-labelledby="seabrook"
+             hidden="hidden">
           <p>
-            Agnes Caroline Thaarup Obel is a Danish singer/songwriter. Her first album, Philharmonics, was released by PIAS Recordings on 4 October 2010 in Europe. Philharmonics was certified gold in June 2011 by the Belgian Entertainment Association (BEA) for sales of 10,000 Copies.
+            Seabrook is a suburb of Melbourne, Victoria, Australia, 19 km south-west of Melbourne's Central Business District, located within the City of Hobsons Bay local government area.
           </p>
         </div>
         <div tabindex="0"
              role="tabpanel"
-             id="complexcomplex"
-             aria-labelledby="complex"
-             hidden="">
+             id="pointcook-tab"
+             aria-labelledby="pointcook"
+             hidden="hidden">
           <p>
-            Fear of complicated buildings:
+            Point Cook is a suburb of Melbourne, Victoria, Australia, 22 km south-west of the CBD. It is the home of RAAF Base Point Cook, the birthplace of the Royal Australian Air Force, and is the current home of the RAAF Museum
           </p>
+        </div>
+        <div tabindex="0"
+             role="tabpanel"
+             id="docklands-tab"
+             aria-labelledby="docklands"
+             hidden="hidden">
           <p>
-            A complex complex complex.
+            Docklands is a modern harbour development dominated by high-rises and the colourful Melbourne Star Observation Wheel, and popular for its shopping and waterside dining. The area's pedestrian plazas are adorned with public murals, sculpture and light displays.
+          </p>
+        </div>
+        <div tabindex="0"
+             role="tabpanel"
+             id="springvale-tab"
+             aria-labelledby="springvale"
+             hidden="hidden">
+          <p>
+            Springvale is a suburb in Melbourne, Victoria, Australia, 22 km southeast of the Melbourne central business district. Its local government area is the City of Greater Dandenong.
           </p>
         </div>
       </div>
 
       <div class="tabs">
-        <div role="tablist" aria-label="N S W">
+        <div id='Nsw' role="tablist" aria-label="N S W">
           <button role="tab"
                   aria-selected="true"
-                  aria-controls="nils-tab"
-                  id="nils">
-            Chatswood
+                  aria-controls="chatswood-tab"
+                  id="chatswood">
+                  Chatswood
           </button>
           <button role="tab"
                   aria-selected="false"
-                  aria-controls="agnes-tab"
-                  id="agnes"
+                  aria-controls="summerhill-tab"
+                  id="summerhill"
                   tabindex="-1">
-            Summer Hill
+                  Summer Hill
           </button>
           <button role="tab"
                   aria-selected="false"
-                  aria-controls="complexcomplex"
-                  id="complex"
-                  tabindex="-1"
-                  data-deletable="">
-            Rosebery
+                  aria-controls="rosebery-tab"
+                  id="rosebery"
+                  tabindex="-1">
+                  Rosebery
           </button>
           <button role="tab"
                   aria-selected="false"
-                  aria-controls="complexcomplex"
-                  id="complex"
-                  tabindex="-1"
-                  data-deletable="">
-            Rosehill
+                  aria-controls="rosehill-tab"
+                  id="rosehill"
+                  tabindex="-1">
+                  Rosehill
           </button>
           <button role="tab"
                   aria-selected="false"
-                  aria-controls="complexcomplex"
-                  id="complex"
+                  aria-controls="kingswood-tab"
+                  id="kingswood"
                   tabindex="-1"
                   data-deletable="">
-            Kingswood
+                  Kingswood <span class="sr-only"> press delete button to delete this tab</span>
           </button>
         </div>
         <div tabindex="0"
              role="tabpanel"
-             id="nils-tab"
-             aria-labelledby="nils">
+             id="chatswood-tab"
+             aria-labelledby="chatswood">
           <p>
-            Nils Frahm is a German musician, composer and record producer based in Berlin. He is known for combining classical and electronic music and for an unconventional approach to the piano in which he mixes a grand piano, upright piano, Roland Juno-60, Rhodes piano, drum machine, and Moog Taurus.
+            Chatswood is a major business and residential district in the Lower North Shore of Sydney, in the state of New South Wales, Australia, 10 kilometres north of the Sydney central business district.
           </p>
         </div>
         <div tabindex="0"
              role="tabpanel"
-             id="agnes-tab"
-             aria-labelledby="agnes"
-             hidden="">
+             id="summerhill-tab"
+             aria-labelledby="summerhill"
+             hidden="hidden">
           <p>
-            Agnes Caroline Thaarup Obel is a Danish singer/songwriter. Her first album, Philharmonics, was released by PIAS Recordings on 4 October 2010 in Europe. Philharmonics was certified gold in June 2011 by the Belgian Entertainment Association (BEA) for sales of 10,000 Copies.
+            Summer Hills is a suburb of Sydney, in the state of New South Wales, Australia. Summer Hill is located 7 kilometres west of the Sydney central business district, in the local government area of the Inner West Council.
           </p>
         </div>
         <div tabindex="0"
              role="tabpanel"
-             id="complexcomplex"
-             aria-labelledby="complex"
-             hidden="">
+             id="rosebery-tab"
+             aria-labelledby="rosebery"
+             hidden="hidden">
           <p>
-            Fear of complicated buildings:
-          </p>
-          <p>
-            A complex complex complex.
+            Rosebery is a suburb of Sydney, in the state of New South Wales, Australia. It is 6 kilometres south of the Sydney central business district and is part of the local government areas of the City of Sydney and the Bayside Council.
           </p>
         </div>
+        <div tabindex="0"
+             role="tabpanel"
+             id="rosehill-tab"
+             aria-labelledby="rosehill"
+             hidden="hidden">
+          <p>
+            Rosehill is a suburb of Sydney, in the state of New South Wales, Australia. Rosehill is located 18 kilometres west of the Sydney central business district in the local government area of the City of Parramatta and is part of the Greater Western Sydney region.
+          </p>
+        </div>
+        <div tabindex="0"
+             role="tabpanel"
+             id="kingswood-tab"
+             aria-labelledby="kingswood"
+             hidden="hidden">
+          <p>
+            Kingswood is a suburb in western Sydney, in the state of New South Wales in Australia. It is 49 kilometres west of the Sydney central business district, in the local government area of the City of Penrith.
+          </p>
+        </div>
+      </div>        
       </div>
       <script src="js/tabs.js"></script>
 </body>
