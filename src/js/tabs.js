@@ -1,8 +1,13 @@
-(function () {
+function initialize() {
+  console.log('hi')
+  console.log('hi', localStorage)
+
   const activeTabIdVic = localStorage.getItem('activeTabVic');
   const activeTabIdNSW = localStorage.getItem('activeTabNsw');
-  const tabListVic = document.querySelector('#Vic');
-  const tabListNSW = document.querySelector('#Nsw');
+  const tabGrpVic = document.querySelector('#Vic');
+  const tabGrpNSW = document.querySelector('#Nsw');
+  const tabListVic = tabGrpVic.querySelectorAll('button');
+  const tabListNSW = tabGrpNSW.querySelectorAll('button');
   const listBox = document.querySelectorAll('[role="listbox"]')[0];
   listBox.addEventListener("change", (event) => {
     const selectedTab = document.querySelector(`[id=${event.target.value}]`)
@@ -33,29 +38,28 @@
     40: 1
   };
 
-  for (i = 0; i < tabListVic.querySelectorAll('button').length; ++i) {
-    addListeners(tabListVic, i);
+  for (i = 0; i < tabListVic.length; ++i) {
+    addListeners(tabGrpVic, tabListVic, i);
   };
 
-  for (i = 0; i < tabListNSW.querySelectorAll('button').length; ++i) {
-    addListeners(tabListNSW, i);
+  for (i = 0; i < tabListNSW.length; ++i) {
+    addListeners(tabGrpNSW, tabListNSW, i);
   };
 
-  function addListeners(tabList, index) {
-    const tabs = tabList.querySelectorAll('button')
+  function addListeners(tabGrp, tabs, index) {
     tabs[index].addEventListener('click', clickEventListener);
-    tabs[index].addEventListener('keydown', keydownEventListener.bind(this, tabList));
-    tabs[index].addEventListener('keyup', keyupEventListener.bind(this, tabList));    
+    tabs[index].addEventListener('keydown', keydownEventListener.bind(this, tabs, tabGrp));
+    tabs[index].addEventListener('keyup', keyupEventListener.bind(this, tabs, tabGrp));    
     tabs[index].index = index;
   };
 
   function clickEventListener(event) {
+    console.log('event', event);
     const tab = event.target;
     activateTab(tab, false);
   };
 
-  function keydownEventListener(tabList, event) {
-    const tabs = tabList.querySelectorAll('button')
+  function keydownEventListener(tabs, tabGrp, event) {
     const key = event.keyCode;
 
     switch (key) {
@@ -69,28 +73,28 @@
         break;
       case keys.up:
       case keys.down:
-        determineOrientation(tabList, event);
+        determineOrientation(tabs, tabGrp, event);
         break;
     };
   };
 
-  function keyupEventListener(tabList, event) {
+  function keyupEventListener(tabs, event) {
     const key = event.keyCode;
 
     switch (key) {
       case keys.left:
       case keys.right:
-        determineOrientation(tabList, event);
+        determineOrientation(tabs, event);
         break;
       case keys.delete:
-        determineDeletable(tabList, event);
+        determineDeletable(tabs, event);
         break;
     };
   };
 
-  function determineOrientation(tabList, event) {
+  function determineOrientation(tabs, tabGrp, event) {
     const key = event.keyCode;
-    const vertical = tabList.getAttribute('aria-orientation') == 'vertical';
+    const vertical = tabGrp.getAttribute('aria-orientation') == 'vertical';
     let proceed = false;
 
     if (vertical) {
@@ -106,7 +110,6 @@
     };
 
     if (proceed) {
-      const tabs = tabList.querySelectorAll('button')
       switchTabOnArrowPress(tabs, event);
     };
   };
@@ -143,6 +146,7 @@
     localStorage.setItem(`activeTab${parent.id}`, tab.id);
     deactivateTabs(tabs);
     tab.removeAttribute('tabindex');
+    
     tab.setAttribute('aria-selected', 'true');
     const controls = tab.getAttribute('aria-controls');
     document.getElementById(controls).removeAttribute('hidden');
@@ -203,9 +207,9 @@
       activateTab(target, false);
     };
   };
-  const activeTabVic = tabListVic.querySelector(`#${activeTabIdVic}`);
-  const activeTabNsw = tabListNSW.querySelector(`#${activeTabIdNSW}`);
+  const activeTabVic = tabGrpVic.querySelector(`#${activeTabIdVic}`);
+  const activeTabNsw = tabGrpNSW.querySelector(`#${activeTabIdNSW}`);
   activateTab(activeTabVic, false)
   activateTab(activeTabNsw, false)
-  document.querySelector("[role='listbox']").focus();
-}());
+  document.querySelector("h1").focus();
+};

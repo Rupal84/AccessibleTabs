@@ -5,10 +5,10 @@
   <title>Accessible Tabs</title>
 
   <link rel="stylesheet" href="css/tabs.css">
-  
 </head>
 
-<body>
+<body onload="initialize()">
+  <h1 id="header" tabindex="-1">Accessible Tabs</h1>
   <label for="cities">Please choose your suburb</label>
   <select name="cities" id="cities" role="listbox">
     <option value="" selected>Select...</option>
@@ -195,6 +195,6 @@
         </div>
       </div>        
       </div>
-      <script src="js/tabs.js"></script>
+      <script type="text/javascript" src="./js/tabs.js"></script>
 </body>
 </html>

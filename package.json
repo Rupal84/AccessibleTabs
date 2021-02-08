@@ -1,0 +1,33 @@
+{
+  "name": "accessibletabs",
+  "version": "1.0.0",
+  "description": "This is static application that has been created to showcase html tabs which conform to accessibility guidelines laid down by W3C (https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel). This application consists of following three files:\r * index.html - Main file that displays tabs in browser\r * js/tabs.js - Contains javascript code to handle tab navigation\r * css/tabs.css - Contains styling changes for web page.",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve src",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rupal84/AccessibleTabs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rupal84/AccessibleTabs/issues"
+  },
+  "homepage": "https://github.com/Rupal84/AccessibleTabs#readme",
+  "dependencies": {
+    "regenerator-runtime": "^0.13.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.12.13",
+    "@testing-library/dom": "^7.2.1",
+    "@testing-library/jest-dom": "^5.5.0",
+    "babel-jest": "^24.4.3",
+    "jest": "^24.3.0",
+    "serve": "^11.3.0"
+  },
+  "setupTestFrameworkScriptFile": "./localStorageMock.js"
+}
