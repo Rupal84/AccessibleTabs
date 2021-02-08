@@ -1,5 +1,508 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`index.html press end button and activate last tab 1`] = `
+<body
+  onload="initialize()"
+>
+  
+  
+  <h1
+    id="header"
+    tabindex="-1"
+  >
+    Accessible Tabs
+  </h1>
+  
+  
+  <label
+    for="cities"
+  >
+    Please choose your suburb
+  </label>
+  
+  
+  <select
+    id="cities"
+    name="cities"
+    role="listbox"
+  >
+    
+    
+    <option
+      selected=""
+      value=""
+    >
+      Select...
+    </option>
+    
+    
+    <optgroup
+      label="Victoria"
+    >
+      
+      
+      <option
+        value="altona"
+      >
+        Altona
+      </option>
+      
+      
+      <option
+        value="seabrook"
+      >
+        Seabrook
+      </option>
+      
+      
+      <option
+        value="pointcook"
+      >
+        Pointcook
+      </option>
+      
+      
+      <option
+        value="docklands"
+      >
+        Docklands
+      </option>
+      
+      
+      <option
+        value="springvale"
+      >
+        Spring Vale
+      </option>
+      
+    
+    </optgroup>
+    
+    
+    <optgroup
+      label="NSW"
+    >
+      
+      
+      <option
+        value="chatswood"
+      >
+        Chatswood
+      </option>
+      
+      
+      <option
+        value="summerhill"
+      >
+        Summer Hill
+      </option>
+      
+      
+      <option
+        value="rosebery"
+      >
+        Rosebery
+      </option>
+      
+      
+      <option
+        value="rosehill"
+      >
+        Rosehill
+      </option>
+      
+      
+      <option
+        value="kingswood"
+      >
+        Kingswood
+      </option>
+      
+    
+    </optgroup>
+    
+    
+  </select>
+  
+    
+  <div
+    class="tabs"
+  >
+    
+        
+    <div
+      aria-label="Victoria"
+      id="Vic"
+      role="tablist"
+    >
+      
+          
+      <button
+        aria-controls="altona-tab"
+        aria-selected="false"
+        id="altona"
+        role="tab"
+        tabindex="-1"
+      >
+        
+            Altona
+          
+      </button>
+      
+          
+      <button
+        aria-controls="seabrook-tab"
+        aria-selected="false"
+        id="seabrook"
+        role="tab"
+        tabindex="-1"
+      >
+        
+            Seabrook
+          
+      </button>
+      
+          
+      <button
+        aria-controls="pointcook-tab"
+        aria-selected="true"
+        id="pointcook"
+        role="tab"
+      >
+        
+            Pointcook
+          
+      </button>
+      
+          
+      <button
+        aria-controls="docklands-tab"
+        aria-selected="false"
+        id="docklands"
+        role="tab"
+        tabindex="-1"
+      >
+        
+            Docklands
+          
+      </button>
+      
+          
+      <button
+        aria-controls="springvale-tab"
+        aria-selected="false"
+        data-deletable=""
+        id="springvale"
+        role="tab"
+        tabindex="-1"
+      >
+        
+            Spring Vale 
+        <span
+          class="sr-only"
+        >
+           press delete button to delete this tab
+        </span>
+        
+          
+      </button>
+      
+        
+    </div>
+    
+        
+    <div
+      aria-labelledby="altona"
+      hidden="hidden"
+      id="altona-tab"
+      role="tabpanel"
+      tabindex="0"
+    >
+      
+          
+      <p>
+        
+            Altona is a suburb of Melbourne, Victoria, Australia, situated 13 km south-west of Melbourne's Central Business District, and located within the City of Hobsons Bay local government area.
+          
+      </p>
+      
+        
+    </div>
+    
+        
+    <div
+      aria-labelledby="seabrook"
+      hidden="hidden"
+      id="seabrook-tab"
+      role="tabpanel"
+      tabindex="0"
+    >
+      
+          
+      <p>
+        
+            Seabrook is a suburb of Melbourne, Victoria, Australia, 19 km south-west of Melbourne's Central Business District, located within the City of Hobsons Bay local government area.
+          
+      </p>
+      
+        
+    </div>
+    
+        
+    <div
+      aria-labelledby="pointcook"
+      id="pointcook-tab"
+      role="tabpanel"
+      tabindex="0"
+    >
+      
+          
+      <p>
+        
+            Point Cook is a suburb of Melbourne, Victoria, Australia, 22 km south-west of the CBD. It is the home of RAAF Base Point Cook, the birthplace of the Royal Australian Air Force, and is the current home of the RAAF Museum
+          
+      </p>
+      
+        
+    </div>
+    
+        
+    <div
+      aria-labelledby="docklands"
+      hidden="hidden"
+      id="docklands-tab"
+      role="tabpanel"
+      tabindex="0"
+    >
+      
+          
+      <p>
+        
+            Docklands is a modern harbour development dominated by high-rises and the colourful Melbourne Star Observation Wheel, and popular for its shopping and waterside dining. The area's pedestrian plazas are adorned with public murals, sculpture and light displays.
+          
+      </p>
+      
+        
+    </div>
+    
+        
+    <div
+      aria-labelledby="springvale"
+      hidden="hidden"
+      id="springvale-tab"
+      role="tabpanel"
+      tabindex="0"
+    >
+      
+          
+      <p>
+        
+            Springvale is a suburb in Melbourne, Victoria, Australia, 22 km southeast of the Melbourne central business district. Its local government area is the City of Greater Dandenong.
+          
+      </p>
+      
+        
+    </div>
+    
+      
+  </div>
+  
+
+      
+  <div
+    class="tabs"
+  >
+    
+        
+    <div
+      aria-label="N S W"
+      id="Nsw"
+      role="tablist"
+    >
+      
+          
+      <button
+        aria-controls="chatswood-tab"
+        aria-selected="true"
+        id="chatswood"
+        role="tab"
+      >
+        
+                  Chatswood
+          
+      </button>
+      
+          
+      <button
+        aria-controls="summerhill-tab"
+        aria-selected="false"
+        id="summerhill"
+        role="tab"
+        tabindex="-1"
+      >
+        
+                  Summer Hill
+          
+      </button>
+      
+          
+      <button
+        aria-controls="rosebery-tab"
+        aria-selected="false"
+        id="rosebery"
+        role="tab"
+        tabindex="-1"
+      >
+        
+                  Rosebery
+          
+      </button>
+      
+          
+      <button
+        aria-controls="rosehill-tab"
+        aria-selected="false"
+        id="rosehill"
+        role="tab"
+        tabindex="-1"
+      >
+        
+                  Rosehill
+          
+      </button>
+      
+          
+      <button
+        aria-controls="kingswood-tab"
+        aria-selected="false"
+        data-deletable=""
+        id="kingswood"
+        role="tab"
+        tabindex="-1"
+      >
+        
+                  Kingswood 
+        <span
+          class="sr-only"
+        >
+           press delete button to delete this tab
+        </span>
+        
+          
+      </button>
+      
+        
+    </div>
+    
+        
+    <div
+      aria-labelledby="chatswood"
+      id="chatswood-tab"
+      role="tabpanel"
+      tabindex="0"
+    >
+      
+          
+      <p>
+        
+            Chatswood is a major business and residential district in the Lower North Shore of Sydney, in the state of New South Wales, Australia, 10 kilometres north of the Sydney central business district.
+          
+      </p>
+      
+        
+    </div>
+    
+        
+    <div
+      aria-labelledby="summerhill"
+      hidden="hidden"
+      id="summerhill-tab"
+      role="tabpanel"
+      tabindex="0"
+    >
+      
+          
+      <p>
+        
+            Summer Hills is a suburb of Sydney, in the state of New South Wales, Australia. Summer Hill is located 7 kilometres west of the Sydney central business district, in the local government area of the Inner West Council.
+          
+      </p>
+      
+        
+    </div>
+    
+        
+    <div
+      aria-labelledby="rosebery"
+      hidden="hidden"
+      id="rosebery-tab"
+      role="tabpanel"
+      tabindex="0"
+    >
+      
+          
+      <p>
+        
+            Rosebery is a suburb of Sydney, in the state of New South Wales, Australia. It is 6 kilometres south of the Sydney central business district and is part of the local government areas of the City of Sydney and the Bayside Council.
+          
+      </p>
+      
+        
+    </div>
+    
+        
+    <div
+      aria-labelledby="rosehill"
+      hidden="hidden"
+      id="rosehill-tab"
+      role="tabpanel"
+      tabindex="0"
+    >
+      
+          
+      <p>
+        
+            Rosehill is a suburb of Sydney, in the state of New South Wales, Australia. Rosehill is located 18 kilometres west of the Sydney central business district in the local government area of the City of Parramatta and is part of the Greater Western Sydney region.
+          
+      </p>
+      
+        
+    </div>
+    
+        
+    <div
+      aria-labelledby="kingswood"
+      hidden="hidden"
+      id="kingswood-tab"
+      role="tabpanel"
+      tabindex="0"
+    >
+      
+          
+      <p>
+        
+            Kingswood is a suburb in western Sydney, in the state of New South Wales in Australia. It is 49 kilometres west of the Sydney central business district, in the local government area of the City of Penrith.
+          
+      </p>
+      
+        
+    </div>
+    
+      
+  </div>
+          
+      
+      
+  <script
+    src="./js/tabs.js"
+    type="text/javascript"
+  />
+  
+
+
+</body>
+`;
+
 exports[`index.html renders a heading element 1`] = `
 <body
   onload="initialize()"

@@ -1,7 +1,4 @@
 function initialize() {
-  console.log('hi')
-  console.log('hi', localStorage)
-
   const activeTabIdVic = localStorage.getItem('activeTabVic');
   const activeTabIdNSW = localStorage.getItem('activeTabNsw');
   const tabGrpVic = document.querySelector('#Vic');
@@ -54,14 +51,12 @@ function initialize() {
   };
 
   function clickEventListener(event) {
-    console.log('event', event);
     const tab = event.target;
     activateTab(tab, false);
   };
 
   function keydownEventListener(tabs, tabGrp, event) {
     const key = event.keyCode;
-
     switch (key) {
       case keys.end:
         event.preventDefault();
@@ -145,8 +140,7 @@ function initialize() {
     const tabs = parent.querySelectorAll('button');
     localStorage.setItem(`activeTab${parent.id}`, tab.id);
     deactivateTabs(tabs);
-    tab.removeAttribute('tabindex');
-    
+    tab.removeAttribute('tabindex');    
     tab.setAttribute('aria-selected', 'true');
     const controls = tab.getAttribute('aria-controls');
     document.getElementById(controls).removeAttribute('hidden');
