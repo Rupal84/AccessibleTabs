@@ -7,10 +7,6 @@ module.exports = {
     globals: {
       window: {}
     },
-    jest: {
-      verbose: true,
-      testURL: "http://localhost/"
-    },
     testEnvironment: 'node',
     transform: {
       "^.+\\.(js|jsx)$": "babel-jest"

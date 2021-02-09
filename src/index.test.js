@@ -21,13 +21,21 @@ const loadHtml = () => {
   })
 }
 
-
 describe('index.html', () => {
   it('renders a heading element', (done) => {
     loadHtml().then((container) => {
       done()
       const header = container.querySelector('#header')
       expect(header.textContent).toEqual('Accessible Tabs');
+    })
+  });
+
+  it('selects a particular tab with mouse click', (done) => {
+    loadHtml().then((container) => {
+      done();
+      const btn = container.querySelector('#seabrook');
+      fireEvent.click(btn);
+      expect(btn).toHaveAttribute('aria-selected', 'true');
     })
   });
 
@@ -53,12 +61,27 @@ describe('index.html', () => {
     })
   });
 
-  it('selects a particular tab with mouse click', (done) => {
+  it('press home button and activate first tab', (done) => {
     loadHtml().then((container) => {
       done();
-      const btn = container.querySelector('#seabrook');
-      fireEvent.click(btn);
-      expect(btn).toHaveAttribute('aria-selected', 'true');
+      const listBox = getByRole(container, 'listbox');
+      fireEvent.change(listBox, { target: { value: 'springvale' } });
+      const springvaleTab = container.querySelector('#springvale');
+      fireEvent.keyDown(springvaleTab, { key: 'Home', code: 'Home', keyCode: 36, charCode: 36 });
+      const altonaTab = container.querySelector('#altona');
+      expect(altonaTab).toHaveAttribute('aria-selected', 'true');
     })
   });
+
+  it('press delete button and activate previous tab', (done) => {
+    loadHtml().then((container) => {
+      done();
+      const listBox = getByRole(container, 'listbox');
+      fireEvent.change(listBox, { target: { value: 'springvale' } });
+      const springvaleTab = container.querySelector('#springvale');
+      fireEvent.keyDown(springvaleTab, { key: 'Delete', code: 'Delete', keyCode: 46, charCode: 46 });
+      const docklandsTab = container.querySelector('#docklands');
+      expect(docklandsTab).toHaveAttribute('aria-selected', 'true');
+    })
+  }); 
 });

@@ -45,8 +45,8 @@ function initialize() {
 
   function addListeners(tabGrp, tabs, index) {
     tabs[index].addEventListener('click', clickEventListener);
-    tabs[index].addEventListener('keydown', keydownEventListener.bind(this, tabs, tabGrp));
-    tabs[index].addEventListener('keyup', keyupEventListener.bind(this, tabs, tabGrp));    
+    tabs[index].addEventListener('keydown', keydownEventListener.bind(this, tabGrp));
+    tabs[index].addEventListener('keyup', keyupEventListener.bind(this, tabGrp));    
     tabs[index].index = index;
   };
 
@@ -55,7 +55,8 @@ function initialize() {
     activateTab(tab, false);
   };
 
-  function keydownEventListener(tabs, tabGrp, event) {
+  function keydownEventListener(tabGrp, event) {
+    const tabs = tabGrp.querySelectorAll('button');
     const key = event.keyCode;
     switch (key) {
       case keys.end:
@@ -68,18 +69,18 @@ function initialize() {
         break;
       case keys.up:
       case keys.down:
-        determineOrientation(tabs, tabGrp, event);
+        determineOrientation(tabGrp, event);
         break;
     };
   };
 
-  function keyupEventListener(tabs, event) {
+  function keyupEventListener(tabGrp, event) {
+    const tabs = tabGrp.querySelectorAll('button');
     const key = event.keyCode;
-
     switch (key) {
       case keys.left:
       case keys.right:
-        determineOrientation(tabs, event);
+        determineOrientation(tabGrp, event);
         break;
       case keys.delete:
         determineDeletable(tabs, event);
@@ -87,7 +88,8 @@ function initialize() {
     };
   };
 
-  function determineOrientation(tabs, tabGrp, event) {
+  function determineOrientation(tabGrp, event) {
+    const tabs = tabGrp.querySelectorAll('button');
     const key = event.keyCode;
     const vertical = tabGrp.getAttribute('aria-orientation') == 'vertical';
     let proceed = false;
@@ -105,11 +107,12 @@ function initialize() {
     };
 
     if (proceed) {
-      switchTabOnArrowPress(tabs, event);
+      switchTabOnArrowPress(tabGrp, event);
     };
   };
 
-  function switchTabOnArrowPress(tabs, event) {
+  function switchTabOnArrowPress(tabGrp, event) {
+    const tabs = tabGrp.querySelectorAll('button');
     const pressed = event.keyCode;
     const target = event.target;
 
@@ -120,7 +123,8 @@ function initialize() {
     if (direction[pressed]) {
       if (target.index !== undefined) {
         if (tabs[target.index + direction[pressed]]) {
-          tabs[target.index + direction[pressed]].focus();
+          const tabIndexToFocus = target.index + direction[pressed];
+          tabs[tabIndexToFocus].focus();
         }
         else if (pressed === keys.left || pressed === keys.up) {
           focusLastTab(tabs);
@@ -167,8 +171,7 @@ function initialize() {
     tabs[tabs.length - 1].focus();
   };
 
-  function determineDeletable(tabList, event) {
-    const tabs = tabList.querySelectorAll('button');
+  function determineDeletable(tabs, event) {
     target = event.target;
     if (target.getAttribute('data-deletable') !== null) {
       deleteTab(event, target);
